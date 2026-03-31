@@ -29,12 +29,13 @@
     },
     "transparency": {
       "enabled": true,
-      "base": 0.5978681917779632,
+      "base": 0.6955309630634392,
       "layers": 0.4
     }
   },
   "general": {
     "logo": "",
+    "excludedScreens": [],
     "apps": {
       "terminal": [
         "foot"
@@ -143,19 +144,32 @@
       "occupiedBg": false,
       "showWindows": true,
       "showWindowsOnSpecialWorkspaces": true,
+      "maxWindowIcons": 0,
       "activeTrail": false,
       "perMonitorWorkspaces": true,
       "label": "  ",
       "occupiedLabel": "󰮯",
       "activeLabel": "󰮯",
       "capitalisation": "preserve",
-      "specialWorkspaceIcons": []
+      "specialWorkspaceIcons": [],
+      "windowIcons": [
+        {
+          "icon": "sports_esports",
+          "regex": "steam(_app_(default|[0-9]+))?"
+        }
+      ]
+    },
+    "activeWindow": {
+      "compact": false,
+      "inverted": false,
+      "showOnHover": true
     },
     "tray": {
       "background": false,
       "recolour": false,
       "compact": false,
-      "iconSubs": []
+      "iconSubs": [],
+      "hiddenIcons": []
     },
     "status": {
       "showAudio": false,
@@ -168,14 +182,9 @@
       "showLockStatus": true
     },
     "clock": {
+      "background": false,
+      "showDate": false,
       "showIcon": true
-    },
-    "sizes": {
-      "innerWidth": 40,
-      "windowPreviewSize": 400,
-      "trayMenuWidth": 300,
-      "batteryWidth": 250,
-      "networkWidth": 320
     },
     "entries": [
       {
@@ -224,6 +233,8 @@
   "dashboard": {
     "enabled": true,
     "showOnHover": true,
+    "mediaUpdateInterval": 500,
+    "resourceUpdateInterval": 1000,
     "dragThreshold": 50,
     "performance": {
       "showBattery": true,
@@ -232,29 +243,9 @@
       "showMemory": true,
       "showStorage": true,
       "showNetwork": true
-    },
-    "sizes": {
-      "tabIndicatorHeight": 3,
-      "tabIndicatorSpacing": 5,
-      "infoWidth": 200,
-      "infoIconSize": 25,
-      "dateTimeWidth": 110,
-      "mediaWidth": 200,
-      "mediaProgressSweep": 180,
-      "mediaProgressThickness": 8,
-      "resourceProgessThickness": 10,
-      "weatherWidth": 250,
-      "mediaCoverArtSize": 150,
-      "mediaVisualiserSize": 80,
-      "resourceSize": 200
     }
   },
-  "controlCenter": {
-    "sizes": {
-      "heightMult": 0.7,
-      "ratio": 1.7777777777777777
-    }
-  },
+  "controlCenter": {},
   "launcher": {
     "enabled": true,
     "showOnHover": false,
@@ -273,12 +264,6 @@
       "schemes": false,
       "variants": false,
       "wallpapers": false
-    },
-    "sizes": {
-      "itemWidth": 600,
-      "itemHeight": 57,
-      "wallpaperWidth": 280,
-      "wallpaperHeight": 200
     },
     "actions": [
       {
@@ -434,22 +419,13 @@
     "clearThreshold": 0.3,
     "expandThreshold": 20,
     "actionOnClick": false,
-    "groupPreviewNum": 3,
-    "sizes": {
-      "width": 400,
-      "image": 41,
-      "badge": 20
-    }
+    "groupPreviewNum": 3
   },
   "osd": {
     "enabled": true,
     "hideDelay": 2000,
     "enableBrightness": true,
-    "enableMicrophone": false,
-    "sizes": {
-      "sliderWidth": 30,
-      "sliderHeight": 150
-    }
+    "enableMicrophone": false
   },
   "session": {
     "enabled": true,
@@ -479,34 +455,18 @@
         "systemctl",
         "reboot"
       ]
-    },
-    "sizes": {
-      "button": 80
     }
   },
-  "winfo": {
-    "sizes": {
-      "heightMult": 0.7,
-      "detailsWidth": 500
-    }
-  },
+  "winfo": {},
   "lock": {
     "recolourLogo": false,
     "enableFprint": true,
     "maxFprintTries": 3,
-    "sizes": {
-      "heightMult": 0.7,
-      "ratio": 1.7777777777777777,
-      "centerWidth": 600
-    }
+    "hideNotifs": false
   },
   "utilities": {
     "enabled": true,
     "maxToasts": 4,
-    "sizes": {
-      "width": 430,
-      "toastWidth": 430
-    },
     "toasts": {
       "configLoaded": true,
       "chargingChanged": true,
@@ -525,14 +485,41 @@
       "provider": [
         "netbird"
       ]
-    }
+    },
+    "quickToggles": [
+      {
+        "enabled": true,
+        "id": "wifi"
+      },
+      {
+        "enabled": true,
+        "id": "bluetooth"
+      },
+      {
+        "enabled": true,
+        "id": "mic"
+      },
+      {
+        "enabled": true,
+        "id": "settings"
+      },
+      {
+        "enabled": true,
+        "id": "gameMode"
+      },
+      {
+        "enabled": true,
+        "id": "dnd"
+      },
+      {
+        "enabled": false,
+        "id": "vpn"
+      }
+    ]
   },
   "sidebar": {
     "enabled": true,
-    "dragThreshold": 80,
-    "sizes": {
-      "width": 430
-    }
+    "dragThreshold": 80
   },
   "services": {
     "weatherLocation": "",
@@ -551,10 +538,13 @@
         "from": "com.github.th_ch.youtube_music",
         "to": "YT Music"
       }
-    ]
+    ],
+    "showLyrics": false,
+    "lyricsBackend": "Auto"
   },
   "paths": {
     "wallpaperDir": "/home/captain/Pictures/Wallpapers",
+    "lyricsDir": "/home/captain/Music/lyrics/",
     "sessionGif": "root:/assets/kurukuru.gif",
     "mediaGif": "root:/assets/bongocat.gif"
   }
