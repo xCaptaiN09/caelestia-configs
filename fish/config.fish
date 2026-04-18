@@ -44,3 +44,6 @@ if status is-interactive
     source ~/.config/caelestia/user-config.fish 2> /dev/null
 end
 
+# OpenClaw Completion
+source "/home/captain/.openclaw/completions/openclaw.fish"
+
