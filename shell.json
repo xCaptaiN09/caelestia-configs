@@ -10,7 +10,7 @@
                 "clock": "Rubik",
                 "material": "Material Symbols Rounded",
                 "mono": "CaskaydiaCove NF",
-                "sans": "Rubik"
+                "sans": "Electroharmonix"
             },
             "size": {
                 "scale": 1
@@ -26,9 +26,9 @@
             "scale": 1
         },
         "transparency": {
-            "base": 0.8028876252086812,
+            "base": 0.30483096828046746,
             "enabled": true,
-            "layers": 0.39979392737896496
+            "layers": 0.22436482679465775
         }
     },
     "background": {
