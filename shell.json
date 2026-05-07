@@ -10,7 +10,7 @@
                 "clock": "Rubik",
                 "material": "Material Symbols Rounded",
                 "mono": "CaskaydiaCove NF",
-                "sans": "Electroharmonix"
+                "sans": "Google Sans Flex Freeze"
             },
             "size": {
                 "scale": 1
@@ -66,7 +66,7 @@
         },
         "clock": {
             "background": false,
-            "showDate": false,
+            "showDate": true,
             "showIcon": true
         },
         "dragThreshold": 20,
