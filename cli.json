@@ -1,5 +1,5 @@
 {
-    "wallpaper": {
-        "postHook": "/usr/bin/pgrep awww-daemon > /dev/null && /usr/bin/awww img \"$WALLPAPER_PATH\" --transition-type wipe --transition-angle 30 --transition-duration 1.5 --transition-fps 60"
-    }
+  "wallpaper": {
+    "postHook": "/usr/bin/pgrep awww-daemon > /dev/null && /usr/bin/awww img \"$WALLPAPER_PATH\" --transition-type random --transition-angle 30 --transition-duration 1.5 --transition-fps 60"
+  }
 }

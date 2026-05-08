@@ -7,7 +7,7 @@ case "$1" in
         awww-daemon --no-cache > /dev/null 2>&1 &
         sleep 0.5
         WALL=$(cat "$WALL_PATH" 2>/dev/null | tr -d "\n")
-        [ -n "$WALL" ] && awww img "$WALL" --transition-type wipe --transition-angle 30 --transition-duration 1.5 --transition-fps 60
+        [ -n "$WALL" ] && awww img "$WALL" --transition-type random --transition-angle 30 --transition-duration 1.5 --transition-fps 60
         echo swww > $HOME/.local/state/caelestia/wallpaper-mode
         ;;
     default)
