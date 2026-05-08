@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+WALL_PATH="$HOME/.local/state/caelestia/wallpaper/path.txt"
+case "$1" in
+    swww)
+        python3 -c "import json,os; f=os.environ['HOME']+('/.local/share/caelestia/shell.json'); c=json.load(open(f)); c['background']['wallpaperEnabled']=False; json.dump(c,open(f,'w'),indent=4)"
+        pkill awww-daemon 2>/dev/null; sleep 0.2
+        awww-daemon --no-cache > /dev/null 2>&1 &
+        sleep 0.5
+        WALL=$(cat "$WALL_PATH" 2>/dev/null | tr -d "\n")
+        [ -n "$WALL" ] && awww img "$WALL" --transition-type wipe --transition-angle 30 --transition-duration 1.5 --transition-fps 60
+        echo swww > $HOME/.local/state/caelestia/wallpaper-mode
+        ;;
+    default)
+        pkill awww-daemon 2>/dev/null
+        python3 -c "import json,os; f=os.environ['HOME']+('/.local/share/caelestia/shell.json'); c=json.load(open(f)); c['background']['wallpaperEnabled']=True; json.dump(c,open(f,'w'),indent=4)"
+        rm -f $HOME/.local/state/caelestia/wallpaper-mode
+        ;;
+    *)
+        echo "Usage: wallpaper-mode [swww|default]"
+        exit 1
+        ;;
+esac
